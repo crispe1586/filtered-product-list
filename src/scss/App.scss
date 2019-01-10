@@ -1,0 +1,54 @@
+@import './_vars.scss';
+@import './_rating.scss';
+
+.App {
+  text-align: center;
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size: 14px;
+  line-height: 21px;
+  max-width: $screen-wide;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.List {
+  display: flex;
+  flex-wrap: wrap;
+}
+.Item {
+  flex: 1 1 25%;
+  padding: 15px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+
+  .picture {
+    margin-bottom: 10px;
+  }
+
+  .features {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-items: center;
+
+    .brand {
+      font-weight: 700;
+    }
+    .name {
+      font-weight: 700;
+    }
+    .type {
+      color: $color-gray;
+    }
+    .price-size {
+      color: $color-red;
+      font-weight: 700;
+    }
+  }
+}
