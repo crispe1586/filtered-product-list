@@ -10,7 +10,6 @@ class Container extends Component {
   componentDidMount () {
     this.props.setItems(itemsData)
   }
-
   render () {
     const {
       items,
@@ -20,7 +19,9 @@ class Container extends Component {
       filter,
       typeCategories,
       sizeCategories,
-      filterItems
+      filterItems,
+      loadMore,
+      visibleItems
     } = this.props
 
     if (!items) {
@@ -39,7 +40,10 @@ class Container extends Component {
           filteredItems={ filteredItems }
           filterItems={ filterItems } />
         <List
-          items={ filteredItems } />
+          items={ filteredItems.slice(0, visibleItems) } />
+        { visibleItems < filteredItems.length &&
+          <button onClick={ loadMore } type="button" className="btn">Load more</button>
+        }
       </div>
     )
   }

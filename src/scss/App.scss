@@ -107,3 +107,21 @@
     }
   }
 }
+
+.btn {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 2;
+  padding: 12px 30px;
+  margin-bottom: 5px;
+  border: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  background: $color-black;
+  color: $color-white;
+  max-width: 200px;
+  margin: 0 auto;
+}

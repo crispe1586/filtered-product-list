@@ -25,7 +25,8 @@ function reducer (state, action) {
         '60ML'
       ],
       maxPrice: null,
-      minPrice: null
+      minPrice: null,
+      visibleItems: 9
     }
   }
 
@@ -73,7 +74,14 @@ function reducer (state, action) {
         filter: {
           ...state.filter,
           [field]: value
-        }
+        },
+        visibleItems: 12
+      }
+    }
+    case 'LOAD_MORE': {
+      return {
+        ...state,
+        visibleItems: state.visibleItems + 12
       }
     }
     default:

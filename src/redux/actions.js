@@ -23,3 +23,9 @@ export function filterItems (field, value) {
     value: value
   }
 }
+
+export function loadMore () {
+  return {
+    type: 'LOAD_MORE'
+  }
+}
