@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import '../scss/App.scss'
-import Loader from '../components/Loader'
 import Filter from '../components/Filter'
 import List from '../components/List'
+import Loader from '../components/Loader'
 import itemsData from '../helper/productList.json'
 
 class Container extends Component {
@@ -12,16 +12,34 @@ class Container extends Component {
   }
 
   render () {
-    const { items } = this.props
+    const {
+      items,
+      minPrice,
+      maxPrice,
+      filteredItems,
+      filter,
+      typeCategories,
+      sizeCategories,
+      filterItems
+    } = this.props
+
     if (!items) {
       return <Loader />
     }
 
     return (
       <div className="App">
-        <Filter />
+        <Filter
+          { ...filter }
+          typeCategories={ typeCategories }
+          sizeCategories={ sizeCategories }
+          items={ items }
+          minPrice={ minPrice }
+          maxPrice={ maxPrice }
+          filteredItems={ filteredItems }
+          filterItems={ filterItems } />
         <List
-          items={ items } />
+          items={ filteredItems } />
       </div>
     )
   }

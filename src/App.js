@@ -8,7 +8,7 @@ function mapStateToProps (state) {
 }
 function mapDispatchToProps (dispatch) {
   return {
-    filterItems: () => dispatch(filterItems()),
+    filterItems: (field, value) => dispatch(filterItems(field, value)),
     setItems: (items) => dispatch(setItems(items))
   }
 }

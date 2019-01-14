@@ -17,9 +17,11 @@
 .List {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1em auto;
 }
 .Item {
-  flex: 1 1 25%;
+  flex: 0 1 25%;
   padding: 15px;
   display: flex;
   flex-flow: column;
@@ -49,6 +51,59 @@
     .price-size {
       color: $color-red;
       font-weight: 700;
+    }
+  }
+}
+
+
+.Filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-bottom: 1px solid $color-gray;
+
+  .Field {
+    flex: 1 1 33%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+    min-width: 200px;
+
+    label {
+      font-weight: bold;
+    }
+    input, select {
+      outline: none;
+      width: 90%;
+      min-width: 180px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: $color-gray;
+      color: $color-gray;
+      background-color: $color-white;
+      font-family: inherit;
+      padding: 0.5em;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      box-sizing: border-box;
+    }
+    select {
+      padding: 0.5em;
+    }
+    input[type="range"] {
+      &:before {
+        content: attr(min) " ";
+        display: inline-flex;
+        margin-top: 2em;
+      }
+      &:after {
+        content: " " attr(max);
+        display: inline-flex;
+        margin-top: 2em;
+      }
     }
   }
 }
