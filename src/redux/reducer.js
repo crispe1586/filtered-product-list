@@ -61,6 +61,7 @@ function reducer (state, action) {
       let { filter } = state
       let updatedItems = items
       filter[field] = value
+      filter['price'] = filter['price'] * 100
 
       for (let [field, fnFilter] of Object.entries(fieldFilters)) {
         if (filter[field] !== '' && filter[field] !== 0) {

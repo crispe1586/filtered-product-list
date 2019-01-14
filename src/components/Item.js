@@ -31,7 +31,7 @@ class Item extends Component {
           <div className="brand">{ brand}</div>
           <div className="name">{ name }</div>
           <div className="type">{ type}</div>
-          <div className="price-size">{ `ab ${price} € / ${size}` }</div>
+          <div className="price-size">{ `ab ${price / 100} € / ${size}` }</div>
           <Rating stars={{ value: (rating * 0.05) }} />
         </div>
       </div>

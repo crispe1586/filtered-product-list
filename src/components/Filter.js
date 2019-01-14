@@ -80,7 +80,7 @@ class Filter extends Component {
           </select>
         </div>
         <div className="Field">
-          <label>Rating</label>
+          <label>Rating (%)</label>
           <input
             id="rating"
             type="range"
@@ -93,14 +93,14 @@ class Filter extends Component {
             placeholder="Rating..." />
         </div>
         <div className="Field">
-          <label>Price</label>
+          <label>Price (€)</label>
           <input
             id="price"
             type="range"
             value={ price }
-            min={ minPrice }
-            max={ maxPrice }
-            step={ (maxPrice - minPrice) / 100 }
+            min={ minPrice / 100 }
+            max={ maxPrice / 100 }
+            step="1"
             onChange={ this.handleChange }
             onBlur={ this.handleChange }
             placeholder="Price..." />
