@@ -1,5 +1,7 @@
 ## Filtered product list
 
+The production minified bundles are in the folder build/static
+
 In the project directory, you can run:
 
 ### `npm run start`
